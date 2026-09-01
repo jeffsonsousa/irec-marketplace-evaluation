@@ -180,7 +180,7 @@ TX_NUMBER=200 ./run_tps_sweep.sh W5 "40 40 40 40 40"
 
 ---
 
-## Key metrics (paper Section 5)
+## Key metrics
 
 The sweep produces per-round data for:
 
