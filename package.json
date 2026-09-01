@@ -1,0 +1,12 @@
+{
+  "name": "irec-marketplace-benchmark",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Caliper benchmark workloads for telecom marketplace smart contracts (Besu)",
+  "dependencies": {
+    "@hyperledger/caliper-cli": "^0.5.0",
+    "@hyperledger/caliper-core": "^0.5.0",
+    "https-proxy-agent": "^7.0.5",
+    "web3": "^1.3.0"
+  }
+}

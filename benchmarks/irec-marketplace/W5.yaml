@@ -1,0 +1,49 @@
+test:
+  name: irec-marketplace
+  description: I-REC Marketplace Benchmarks W1–W8 on Besu QBFT
+  workers:
+    type: local
+    number: 1
+
+  rounds:
+    - label: W5_OpenTradeOffer
+      description: OpenTradeOffer (secondary market listing)
+      txNumber: 50
+      rateControl: { type: fixed-rate, opts: { tps: 10 } }
+      workload:
+        module: benchmarks/irec-marketplace/workloads/W5_OpenTradeOffer.js
+        arguments: {}
+
+monitors:
+  resource:
+    - module: docker
+      options:
+        interval: 10
+        cpuUsageNormalization: true
+        containers:
+          - /node1
+          - /node2
+          - /node3
+          - /node4
+          - /node5
+          - /node6
+        stats:
+          memory:
+            max: true
+            avg: true
+          cpu:
+            max: true
+            avg: true
+          networkIO:
+            enabled: true
+          diskIO:
+            enabled: true
+        charting:
+          bar:
+            metrics: [Memory(avg), CPU%(avg)]
+          polar:
+            metrics: [all]
+
+observer:
+  type: local
+  interval: 5

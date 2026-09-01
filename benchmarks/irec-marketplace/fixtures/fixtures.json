@@ -1,0 +1,592 @@
+{
+  "runId": "irec-bench-001",
+  "buyer": "0x0aC77157559c7FD1595c05428C9066D48932Dc39",
+  "neocoinBalancePerBuyer": 999999,
+  "preIrecInitialVolume": 500,
+  "irecDefaultVolume": 100,
+  "preIrecsForBuy": [],
+  "irecsForBurn": [],
+  "offersForBuy": [
+    {
+      "offerId": "OFFER-67A85F90",
+      "tokenIds": [
+        4602
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-E5A5BAA0",
+      "tokenIds": [
+        4603
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-C587C6C1",
+      "tokenIds": [
+        4604
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-5C5B1EC6",
+      "tokenIds": [
+        4605
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-69097139",
+      "tokenIds": [
+        4606
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-51DA0CE7",
+      "tokenIds": [
+        4607
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-3762E486",
+      "tokenIds": [
+        4608
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-F3B5C41D",
+      "tokenIds": [
+        4609
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-74970EEE",
+      "tokenIds": [
+        4610
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-B91C6883",
+      "tokenIds": [
+        4611
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-28E686D5",
+      "tokenIds": [
+        4612
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-391194AB",
+      "tokenIds": [
+        4613
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-D7C79EE4",
+      "tokenIds": [
+        4614
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-E6DC1F23",
+      "tokenIds": [
+        4615
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-497D2C63",
+      "tokenIds": [
+        4616
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-3973B9D9",
+      "tokenIds": [
+        4617
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-614CC535",
+      "tokenIds": [
+        4618
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-D2A12DAD",
+      "tokenIds": [
+        4619
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-24F38BD7",
+      "tokenIds": [
+        4620
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-9BE6BF8D",
+      "tokenIds": [
+        4621
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-9711854C",
+      "tokenIds": [
+        4622
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-DB98B118",
+      "tokenIds": [
+        4623
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-C4EFA144",
+      "tokenIds": [
+        4624
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-7551A9BC",
+      "tokenIds": [
+        4625
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-D102E6F2",
+      "tokenIds": [
+        4626
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-BA95F0AD",
+      "tokenIds": [
+        4627
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-7819300C",
+      "tokenIds": [
+        4628
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-2936CEA8",
+      "tokenIds": [
+        4629
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-9DBF6407",
+      "tokenIds": [
+        4630
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-47BB8D87",
+      "tokenIds": [
+        4631
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-5A0BFED5",
+      "tokenIds": [
+        4632
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-74F770E1",
+      "tokenIds": [
+        4633
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-EAADFC8D",
+      "tokenIds": [
+        4634
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-4CEBDA8D",
+      "tokenIds": [
+        4635
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-41A63914",
+      "tokenIds": [
+        4636
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-5E170B54",
+      "tokenIds": [
+        4637
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-BF1E2EAA",
+      "tokenIds": [
+        4638
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-7629F959",
+      "tokenIds": [
+        4639
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-D4815DF4",
+      "tokenIds": [
+        4640
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-5B814E0A",
+      "tokenIds": [
+        4641
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-3CCA043C",
+      "tokenIds": [
+        4642
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-768EDC23",
+      "tokenIds": [
+        4643
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-0B9C87BB",
+      "tokenIds": [
+        4644
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-9FCF796C",
+      "tokenIds": [
+        4645
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-211D2BA3",
+      "tokenIds": [
+        4646
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-79E7D46C",
+      "tokenIds": [
+        4647
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-EAB621D7",
+      "tokenIds": [
+        4648
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-D8BBE82A",
+      "tokenIds": [
+        4649
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-402B69AB",
+      "tokenIds": [
+        4650
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    },
+    {
+      "offerId": "OFFER-AF37DF0C",
+      "tokenIds": [
+        4651
+      ],
+      "quantities": [
+        100
+      ],
+      "price": 10
+    }
+  ],
+  "mintMetadataTemplates": [
+    {
+      "supplyCompany": "Neoenergia Renovável S.A.",
+      "originPlace": "BR",
+      "certificateIdFrom": "NE-2024-001",
+      "certificateIdTo": "NE-2024-100",
+      "productionPeriod": "01/2024-12/2024",
+      "energySource": 0,
+      "url": "https://institutototum.com.br/cert/ne-2024-001"
+    },
+    {
+      "supplyCompany": "Canoas Energia Renovável S.A.",
+      "originPlace": "BR",
+      "certificateIdFrom": "CE-2024-001",
+      "certificateIdTo": "CE-2024-100",
+      "productionPeriod": "01/2024-12/2024",
+      "energySource": 1,
+      "url": "https://institutototum.com.br/cert/ce-2024-001"
+    },
+    {
+      "supplyCompany": "Chapada Energia Renovável S.A.",
+      "originPlace": "BR",
+      "certificateIdFrom": "CHE-2024-001",
+      "certificateIdTo": "CHE-2024-100",
+      "productionPeriod": "01/2024-12/2024",
+      "energySource": 2,
+      "url": "https://institutototum.com.br/cert/che-2024-001"
+    }
+  ],
+  "irecsForSell": [
+    "4e7f9bff-c69b-4d91-9218-71a0ec75bfa6",
+    "99914bb0-fb9d-46b7-b40d-d6038182cfae",
+    "cc17955d-db42-4fee-b257-bc13287c0559",
+    "3b659354-6e24-4642-8746-90c6a7e445ea",
+    "e5d6c530-77c7-4884-82aa-776717a7dcbb",
+    "1fd0d00d-90e4-45ce-8aaa-08eaaff9b216",
+    "7485cb6a-917b-413f-a280-35cd01823b8b",
+    "c19d915f-7c6c-4a21-8148-e28ab24596af",
+    "6ddf813b-f918-468b-bfb7-44d0ed1a6687",
+    "0e6aeaa6-43da-45c6-a7d8-6861e0794046",
+    "b75c1901-cd0b-4eab-906a-4ae252ec8acb",
+    "03cf9591-bca0-4c65-a96a-3fcd82fc32aa",
+    "08c9e1ca-37cc-45f3-96a5-e7d5565df64a",
+    "478073af-240b-41b5-bdb3-4f44affc506c",
+    "2bfcf6d5-b04f-4ea7-91ed-930f78f91f09",
+    "474c8780-a0b0-4939-beb5-46287c8fe2ab",
+    "11bba339-ad00-4bbb-bb61-981ca558749e",
+    "27ee8bdd-9d0e-4b4f-9aac-5925ce163b7f",
+    "cb02be05-fdab-4790-8a2b-28be32def975",
+    "454f4a67-b789-493f-9a1a-f0319183c4cd",
+    "e476120e-82c9-4f12-b735-65d269a7e56e",
+    "55014d25-92fa-44c2-9d2b-99ac60d5da21",
+    "e9face58-def5-4ac6-8358-20a748ee57e8",
+    "4f4cf351-53a9-4e6a-b23e-74489a112ae4",
+    "ba98f908-9e16-4174-a039-bdea1b85d763",
+    "c83d818b-0ba1-457b-91e8-38dece543278",
+    "499b5411-accd-466c-93ac-7b1cbbf82115",
+    "8af6c52a-5bdd-436c-b391-66e97b6bd736",
+    "0ca33ff9-ea16-4a14-ab4a-53e32b06c5d6",
+    "6b4d1891-65d4-450d-abd1-67080b4eee43",
+    "b868118a-5689-45a7-8953-f6eaf4ec0524",
+    "039da45f-87e9-4607-b226-d85f0731f833",
+    "f37756ff-46c5-42ad-92db-d21b01e52dd7",
+    "fd900d26-5e20-4eee-8d20-034ebc2b1616",
+    "8a18a491-1fc5-4666-9d95-8f2837494bb7",
+    "7aadf5b5-2012-4a29-ada5-28092241e613",
+    "e711f259-89fa-4ce4-872c-372bd35f724b",
+    "0818fbea-2398-4115-998a-e6edf1f026e8",
+    "e674e940-9fbb-44ca-9efd-3a835658acc1",
+    "6d3cfa41-d551-4bf1-8f8b-3a29c03e84fc",
+    "d3d9d9ee-c296-46f4-b9ed-3ae53db4c9a9",
+    "c5ba8f6d-b628-4f3a-906b-7d205f3476ca",
+    "0a59969c-026d-4ec6-8d49-d22f7d5a397e",
+    "0d9666c1-0cb2-4cc2-98e8-b11bcb94aca1",
+    "e7f0d5e3-520c-49ee-a26c-a5837ce43033",
+    "9514130d-661b-4f15-9725-a77e17b9c19a",
+    "9b353a1b-2258-4c28-bcf9-d235b8da308f",
+    "31c99497-2bc2-4118-84f1-d3f239e7d1db",
+    "87f10fdd-80e8-45b2-a9e7-daeb5ed30a5e",
+    "23ddf7f8-42dd-4792-a537-9d088d7cacd2"
+  ]
+}

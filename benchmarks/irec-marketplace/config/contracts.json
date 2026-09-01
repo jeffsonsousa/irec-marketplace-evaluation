@@ -1,0 +1,25 @@
+{
+  "ws": "ws://127.0.0.1:8546",
+  "chainId": 12120014,
+  "TokenIrec": {
+    "address": "0xf94Ae52945f502EAafbc2Ad57B3fB65d09757EC8",
+    "abi": "../../contracts/abi/TokenIrec.json"
+  },
+  "AssetManager": {
+    "address": "0x6032BC8B6364fbFFDFD0570bfc1A737F70B635d9",
+    "abi": "../../contracts/abi/AssetManager.json"
+  },
+  "TradeTokens": {
+    "address": "0x38576CC96E5C258BCd73654d7b6B234dAFA76Dd3",
+    "abi": "../../contracts/abi/TradeTokens.json"
+  },
+  "admin": {
+    "address": "0x0ac77157559c7fd1595c05428c9066d48932dc39"
+  },
+  "defaults": {
+    "neocoinId": 1,
+    "approvalAmount": "1000000000000000000000000",
+    "defaultVolume": 100,
+    "defaultPrice": 1000
+  }
+}

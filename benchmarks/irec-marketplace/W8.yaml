@@ -1,0 +1,125 @@
+test:
+  name: irec-marketplace
+  description: I-REC Marketplace Benchmarks W1–W8 on Besu QBFT
+  workers:
+    type: local
+    number: 4
+
+rounds:
+  - label: W1_MintNeocoin
+    description: Mint NeoCoin (ERC20 currency supply)
+    txDuration: 30
+    rateControl: { type: fixed-rate, opts: { tps: 10 } }
+    workload:
+      module: benchmarks/irec-marketplace/workloads/W1_MintNeocoin.js
+      arguments:
+        amounts: [100, 500, 1000]
+
+  - label: W2_CreatePreIrec
+    description: CreatePreIrec (register renewable generation batch)
+    txDuration: 30
+    rateControl: { type: fixed-rate, opts: { tps: 5 } }
+    workload:
+      module: benchmarks/irec-marketplace/workloads/W2_CreatePreIrec.js
+      arguments:
+        volumes: [100, 200, 500]
+        periods: ["01/2024-12/2024", "01/2025-06/2025"]
+        expDates: ["2025-12-31", "2026-06-30"]
+
+  - label: W3_BuyPreIrec
+    description: BuyPreIrec (purchase, creates PurchaseReceipt on-chain)
+    txDuration: 30
+    rateControl: { type: fixed-rate, opts: { tps: 10 } }
+    workload:
+      module: benchmarks/irec-marketplace/workloads/W3_BuyPreIrec.js
+      arguments:
+        amount: 100
+        price: 1000
+
+  - label: W4_MintIREC
+    description: MintIREC (on-chain I-REC token issuance)
+    txDuration: 30
+    rateControl: { type: fixed-rate, opts: { tps: 5 } }
+    workload:
+      module: benchmarks/irec-marketplace/workloads/W4_MintIREC.js
+      arguments:
+        volume: 100
+        receiptIndex: 0
+
+  - label: W5_OpenTradeOffer
+    description: OpenTradeOffer (secondary market listing)
+    txDuration: 30
+    rateControl: { type: fixed-rate, opts: { tps: 10 } }
+    workload:
+      module: benchmarks/irec-marketplace/workloads/W5_OpenTradeOffer.js
+      arguments:
+        tokenIds: [2]
+        quantities: [10]
+        prices: [500, 1000, 1500]
+
+  - label: W6_BuyTradeOffer
+    description: BuyTradeOffer (secondary market P2P purchase)
+    txDuration: 30
+    rateControl: { type: fixed-rate, opts: { tps: 10 } }
+    workload:
+      module: benchmarks/irec-marketplace/workloads/W6_BuyTradeOffer.js
+      arguments: {}
+
+  - label: W7_BurnIREC
+    description: BurnIREC (certificate retirement — terminal state)
+    txDuration: 30
+    rateControl: { type: fixed-rate, opts: { tps: 15 } }
+    workload:
+      module: benchmarks/irec-marketplace/workloads/W7_BurnIREC.js
+      arguments:
+        value: 10
+
+  - label: W8_E2E_Mix
+    description: End-to-end I-REC lifecycle mix (probabilistic)
+    txDuration: 60
+    rateControl: { type: fixed-rate, opts: { tps: 30 } }
+    workload:
+      module: benchmarks/irec-marketplace/workloads/W8_Mix.js
+      arguments:
+        mix:
+          MintNeocoin:    0.10
+          CreatePreIrec:  0.15
+          BuyPreIrec:     0.20
+          MintIREC:       0.20
+          OpenTradeOffer: 0.15
+          BuyTradeOffer:  0.10
+          BurnIREC:       0.10
+
+monitors:
+  resource:
+    - module: docker
+      options:
+        interval: 10
+        cpuUsageNormalization: true
+        containers:
+          - /node1
+          - /node2
+          - /node3
+          - /node4
+          - /node5
+          - /node6
+        stats:
+          memory:
+            max: true
+            avg: true
+          cpu:
+            max: true
+            avg: true
+          networkIO:
+            enabled: true
+          diskIO:
+            enabled: true
+        charting:
+          bar:
+            metrics: [Memory(avg), CPU%(avg)]
+          polar:
+            metrics: [all]
+
+observer:
+  type: local
+  interval: 5

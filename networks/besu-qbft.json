@@ -1,0 +1,1624 @@
+{
+  "caliper": {
+    "blockchain": "ethereum",
+    "command": {}
+  },
+  "ethereum": {
+    "url": "ws://127.0.0.1:8645",
+    "fromAddress": "YOUR_ADDRESS",
+    "fromAddressPrivateKey": "YOUR_PRIVATEKEY",
+    "transactionConfirmationBlocks": 1,
+    "chainId": 1337,
+    "contracts": {
+      "AssetManager": {
+        "address": "YOUR_ADDRESS_CONTRACT",
+        "estimateGas": true,
+        "gas": {
+          "createPreIrec": 10000000,
+          "buyPreIrec": 10000000
+        },
+        "abi": [
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "irecContractAddress",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+              }
+            ],
+            "name": "OwnableInvalidOwner",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              }
+            ],
+            "name": "OwnableUnauthorizedAccount",
+            "type": "error"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "price",
+                "type": "uint256"
+              }
+            ],
+            "name": "buyPreIrec",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "enterprise",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "volume",
+                "type": "uint256"
+              },
+              {
+                "internalType": "string",
+                "name": "generationPeriod",
+                "type": "string"
+              },
+              {
+                "internalType": "enum TokenIrecLib.EnergySource",
+                "name": "energySource",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string",
+                "name": "expirationDate",
+                "type": "string"
+              }
+            ],
+            "name": "createPreIrec",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "date",
+                "type": "string"
+              }
+            ],
+            "name": "expirePreIrec",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "date",
+                "type": "string"
+              }
+            ],
+            "name": "getExpiredTokens",
+            "outputs": [
+              {
+                "internalType": "string[]",
+                "name": "",
+                "type": "string[]"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "id",
+                "type": "string"
+              }
+            ],
+            "name": "getPreIrec",
+            "outputs": [
+              {
+                "components": [
+                  {
+                    "internalType": "enum TokenIrecLib.Status",
+                    "name": "status",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "supplyCompany",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "volume",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "generationPeriod",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "enum TokenIrecLib.EnergySource",
+                    "name": "energySource",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "expirationDate",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "createdDate",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct TokenIrecLib.PreIrec",
+                "name": "",
+                "type": "tuple"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "index",
+                "type": "uint256"
+              }
+            ],
+            "name": "getPurchaseReceipt",
+            "outputs": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "receiptOwner",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "preIrecId",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isIrecIssued",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "txHash",
+                    "type": "bytes32"
+                  }
+                ],
+                "internalType": "struct TokenIrecLib.PurchaseReceipt",
+                "name": "",
+                "type": "tuple"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "buyer",
+                "type": "address"
+              }
+            ],
+            "name": "getReceiptIndexes",
+            "outputs": [
+              {
+                "internalType": "uint256[]",
+                "name": "",
+                "type": "uint256[]"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "getTotalVolume",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "enum TokenIrecLib.EnergySource",
+                "name": "energySource",
+                "type": "uint8"
+              }
+            ],
+            "name": "getTotalVolumeBySource",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "buyer",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "receiptIndex",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "hash",
+                "type": "bytes32"
+              }
+            ],
+            "name": "markReceiptAsIssued",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+              {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          }
+        ]
+      },
+      "TokenIrec": {
+        "address": "YOUR_ADDRESS_CONTRACT",
+        "estimateGas": true,
+        "gas": {
+          "mintERC20": 10000000,
+          "mintIREC": 10000000,
+          "burnIREC": 10000000
+        },
+        "abi": [
+          {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "balance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "needed",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              }
+            ],
+            "name": "ERC1155InsufficientBalance",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "approver",
+                "type": "address"
+              }
+            ],
+            "name": "ERC1155InvalidApprover",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "idsLength",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "valuesLength",
+                "type": "uint256"
+              }
+            ],
+            "name": "ERC1155InvalidArrayLength",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+              }
+            ],
+            "name": "ERC1155InvalidOperator",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "receiver",
+                "type": "address"
+              }
+            ],
+            "name": "ERC1155InvalidReceiver",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+              }
+            ],
+            "name": "ERC1155InvalidSender",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+              }
+            ],
+            "name": "ERC1155MissingApprovalForAll",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+              }
+            ],
+            "name": "OwnableInvalidOwner",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              }
+            ],
+            "name": "OwnableUnauthorizedAccount",
+            "type": "error"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+              },
+              {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "approved",
+                "type": "bool"
+              }
+            ],
+            "name": "ApprovalForAll",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              }
+            ],
+            "name": "BurnERC20",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "id",
+                "type": "uint256"
+              },
+              {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              }
+            ],
+            "name": "BurnIREC",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "volume",
+                "type": "uint256"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "user",
+                "type": "address"
+              },
+              {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "receiptIndex",
+                "type": "uint256"
+              }
+            ],
+            "name": "IrecCreated",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "indexed": false,
+                "internalType": "uint256[]",
+                "name": "ids",
+                "type": "uint256[]"
+              },
+              {
+                "indexed": false,
+                "internalType": "uint256[]",
+                "name": "values",
+                "type": "uint256[]"
+              }
+            ],
+            "name": "TransferBatch",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "id",
+                "type": "uint256"
+              },
+              {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              }
+            ],
+            "name": "TransferSingle",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": false,
+                "internalType": "string",
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "id",
+                "type": "uint256"
+              }
+            ],
+            "name": "URI",
+            "type": "event"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              }
+            ],
+            "name": "ERC20Transfer",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "id",
+                "type": "uint256"
+              }
+            ],
+            "name": "balanceOf",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address[]",
+                "name": "accounts",
+                "type": "address[]"
+              },
+              {
+                "internalType": "uint256[]",
+                "name": "ids",
+                "type": "uint256[]"
+              }
+            ],
+            "name": "balanceOfBatch",
+            "outputs": [
+              {
+                "internalType": "uint256[]",
+                "name": "",
+                "type": "uint256[]"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              }
+            ],
+            "name": "burnERC20",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "uuid",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "certificateIdFrom",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "certificateIdTo",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              }
+            ],
+            "name": "burnIREC",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256[]",
+                "name": "ids",
+                "type": "uint256[]"
+              }
+            ],
+            "name": "changeBalanceList",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              }
+            ],
+            "name": "getBurnInfo",
+            "outputs": [
+              {
+                "components": [
+                  {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "initialBeneficiary",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "finalBeneficiary",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "supplyCompany",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "originPlace",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "initialVolume",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256[]",
+                    "name": "burntVolumes",
+                    "type": "uint256[]"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "certificateIdFrom",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "certificateIdTo",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "productionPeriod",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "enum TokenIrecLib.EnergySource",
+                    "name": "energySource",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "url",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "bytes32[]",
+                    "name": "burnHashes",
+                    "type": "bytes32[]"
+                  }
+                ],
+                "internalType": "struct TokenIrecLib.BurnMetadata",
+                "name": "",
+                "type": "tuple"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              }
+            ],
+            "name": "getBurntTokensIds",
+            "outputs": [
+              {
+                "internalType": "uint256[]",
+                "name": "",
+                "type": "uint256[]"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "uint256[]",
+                "name": "tokensIds",
+                "type": "uint256[]"
+              }
+            ],
+            "name": "getCertificatesRanges",
+            "outputs": [
+              {
+                "internalType": "string[]",
+                "name": "",
+                "type": "string[]"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              }
+            ],
+            "name": "getIrecBalances",
+            "outputs": [
+              {
+                "internalType": "uint256[]",
+                "name": "",
+                "type": "uint256[]"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "uuid",
+                "type": "string"
+              }
+            ],
+            "name": "getIrecInfo",
+            "outputs": [
+              {
+                "components": [
+                  {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "initialBeneficiary",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "finalBeneficiary",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "supplyCompany",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "originPlace",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "volume",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "certificateIdFrom",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "certificateIdTo",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "productionPeriod",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "enum TokenIrecLib.EnergySource",
+                    "name": "energySource",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "url",
+                    "type": "string"
+                  }
+                ],
+                "internalType": "struct TokenIrecLib.IrecMetadata",
+                "name": "",
+                "type": "tuple"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "uuid",
+                "type": "string"
+              }
+            ],
+            "name": "getTokenIdByUUID",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "getTotalNEOSupply",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              }
+            ],
+            "name": "getUUIDByTokenId",
+            "outputs": [
+              {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+              }
+            ],
+            "name": "isApprovedForAll",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "name": "mintERC20",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "components": [
+                  {
+                    "internalType": "string",
+                    "name": "uuid",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "supplyCompany",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "originPlace",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "certificateIdFrom",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "certificateIdTo",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "productionPeriod",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "enum TokenIrecLib.EnergySource",
+                    "name": "energySource",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "url",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct TokenIrecLib.MintIrecMetadata",
+                "name": "metadata",
+                "type": "tuple"
+              },
+              {
+                "internalType": "uint256",
+                "name": "receiptIndex",
+                "type": "uint256"
+              }
+            ],
+            "name": "mintIREC",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+              {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256[]",
+                "name": "ids",
+                "type": "uint256[]"
+              },
+              {
+                "internalType": "uint256[]",
+                "name": "values",
+                "type": "uint256[]"
+              },
+              {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+              }
+            ],
+            "name": "safeBatchTransferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "id",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+              }
+            ],
+            "name": "safeTransferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+              },
+              {
+                "internalType": "bool",
+                "name": "approved",
+                "type": "bool"
+              }
+            ],
+            "name": "setApprovalForAll",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "assetManagerAddress",
+                "type": "address"
+              }
+            ],
+            "name": "setAssetManager",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "bytes4",
+                "name": "interfaceId",
+                "type": "bytes4"
+              }
+            ],
+            "name": "supportsInterface",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "name": "uri",
+            "outputs": [
+              {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          }
+        ]
+      },
+      "TradeTokens": {
+        "address": "YOUR_ADDRESS_CONTRACT",
+        "estimateGas": true,
+        "gas": {
+          "openIrecOffer": 10000000,
+          "buyIrec": 10000000
+        },
+        "abi": [
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "tokenIrecAddress",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+              }
+            ],
+            "name": "OwnableInvalidOwner",
+            "type": "error"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              }
+            ],
+            "name": "OwnableUnauthorizedAccount",
+            "type": "error"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "offerId",
+                "type": "string"
+              }
+            ],
+            "name": "buyIrec",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "offerId",
+                "type": "string"
+              }
+            ],
+            "name": "getOffer",
+            "outputs": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "seller",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "uint256[]",
+                    "name": "tokenIdsSold",
+                    "type": "uint256[]"
+                  },
+                  {
+                    "internalType": "uint256[]",
+                    "name": "tokenQuantities",
+                    "type": "uint256[]"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isFinished",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenIrecLib.IrecOffer",
+                "name": "",
+                "type": "tuple"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "string",
+                "name": "offerId",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256[]",
+                "name": "tokensIdsSold",
+                "type": "uint256[]"
+              },
+              {
+                "internalType": "uint256[]",
+                "name": "tokenQuantities",
+                "type": "uint256[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "name": "openIrecOffer",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+              {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          }
+        ]
+      }
+    },
+    "accounts": {
+      "default": [
+        {
+          "address": "YOUR_ADDRESS_ACCOUNT",
+          "privateKey": "YOUR_PRIVATEKEY"
+        },
+        {
+          "address": "YOUR_ADDRESS_ACCOUNT",
+          "privateKey": "YOUR_PRIVATEKEY"
+        },
+        {
+          "address": "YOUR_ADDRESS_ACCOUNT",
+          "privateKey": "YOUR_PRIVATEKEY"
+        },
+        {
+          "address": "YOUR_ADDRESS_ACCOUNT",
+          "privateKey": "YOUR_PRIVATEKEY"
+        }
+      ]
+    }
+  }
+}
